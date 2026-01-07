@@ -492,3 +492,85 @@ body.noah-theme .task-form input:focus { border-color: var(--noah-color); }
     .filters { flex-wrap: wrap; }
     .filter-btn { min-width: 45%; }
 }
+/* ===== Filtres par priorité ===== */
+.priority-filters {
+    background: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 12px;
+    align-items: center;
+}
+
+.filter-label {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+.priority-filter-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.priority-filter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.priority-filter-btn.active {
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.priority-filter-btn.active[data-priority="all"] {
+    background: var(--dark);
+}
+
+.priority-filter-btn.active[data-priority="high"] {
+    background: linear-gradient(135deg, #ff5252 0%, #f44336 100%);
+}
+
+.priority-filter-btn.active[data-priority="medium"] {
+    background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+}
+
+.priority-filter-btn.active[data-priority="low"] {
+    background: linear-gradient(135deg, #4caf50 0%, #00c853 100%);
+}
+
+/* Compteur par priorité */
+.priority-count {
+    display: inline-block;
+    background: rgba(255,255,255,0.3);
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    margin-left: 5px;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .priority-filters {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .filter-label {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    
+    .priority-filter-btn {
+        flex: 1;
+        min-width: 70px;
+    }
+}
